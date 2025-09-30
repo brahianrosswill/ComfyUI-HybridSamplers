@@ -16,6 +16,15 @@ def sampler_adaptive_euler(model, x, sigmas, extra_args=None, callback=None, dis
         return xi * scale
     return kdiff_sampling.sample_euler(model, x, sigmas, extra_args=extra_args, callback=cb, disable=disable)
 
+def sampler_adaptive_euler_ancestral(model, x, sigmas, extra_args=None, callback=None, disable=False, params=None):
+    print("[HybridSamplers] Using custom sampler: AdaptiveEulerAncestral")
+    def cb(state):
+        xi = state["x"]
+        sigma = state["sigma"]
+        scale = 1.0 - 0.1 * torch.tanh(sigma)
+        return xi * scale
+    return kdiff_sampling.sample_euler_ancestral(model, x, sigmas, extra_args=extra_args, callback=cb, disable=disable)
+
 def sampler_dynamic_langevin(model, x, sigmas, extra_args=None, callback=None, disable=False, params=None):
     print("[HybridSamplers] Using custom sampler: DynamicLangevin")
     def cb(state):
@@ -81,6 +90,7 @@ def sampler_multidimensional(model, x, sigmas, extra_args=None, callback=None, d
 
 CUSTOM_SAMPLER_IMPL = {
     "AdaptiveEuler": {"fn": sampler_adaptive_euler},
+    "AdaptiveEulerAncestral": {"fn": sampler_adaptive_euler_ancestral},
     "DynamicLangevin": {"fn": sampler_dynamic_langevin},
     "StochasticRungeKutta": {"fn": sampler_stochastic_rk},
     "TemporalSampling": {"fn": sampler_temporal_sampling},
