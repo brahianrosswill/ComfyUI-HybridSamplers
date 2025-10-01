@@ -11,13 +11,37 @@ With HybridSamplers, you can explore alternative numerical methods, dynamic sche
 ### Custom Samplers
 
 * **AdaptiveEuler** – Euler-based sampler with adaptive scaling.
+![AdaptiveEuler_00001](https://github.com/user-attachments/assets/10df36d8-3765-4c18-bde9-4bf730d3989a)
+
+  
 * **DynamicLangevin** – Langevin dynamics with noise adaptation.
+![DynamicLangevin_00000](https://github.com/user-attachments/assets/ecd878f2-208b-476d-baca-34b92341a7ef)
+
+  
 * **StochasticRungeKutta** – Runge–Kutta method with stochastic jitter.
+![StochasticRungeKutta_00000](https://github.com/user-attachments/assets/59f6c929-42d3-48bf-93c9-561cd4205108)
+
+  
 * **TemporalSampling** – Time-aware blending between diffusion steps.
+![TemporalSampling_00000](https://github.com/user-attachments/assets/505b762f-7c0a-4e78-a664-fbf577f51e3a)
+
+  
 * **SpatialSampling** – Spatially perturbed sampling for added detail.
+![SpatialSampling_00000](https://github.com/user-attachments/assets/bd839b18-ee56-4022-9cf7-db1fa5fee02e)
+
+  
 * **Quantized** – Rounds latents to discrete bins for a quantized look.
+![Quantized_00000](https://github.com/user-attachments/assets/33e8830b-ea2e-45c8-a2ff-2491beb2a20b)
+
+  
 * **Anisotropic** – Applies anisotropic noise for directional detail.
+![Anisotropic_00000](https://github.com/user-attachments/assets/a6e8bfc5-2820-4025-a701-dcc38bfead4c)
+
+  
 * **MultiDimensional** – Hybrid Euler + Heun blending.
+![MultiDimensional_00000](https://github.com/user-attachments/assets/08070532-9a45-4b8b-9a57-16002a1e20d1)
+
+Images generated at 15 steps with cfg 7.0 and seed 42
 
 ### Custom Schedulers
 
