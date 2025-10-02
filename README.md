@@ -69,6 +69,7 @@ cd ComfyUI/custom_nodes
 git clone https://github.com/azazeal04/ComfyUI-HybridSamplers.git
 ```
 Install from manager
+
 Search for HybridSamplers for ComfyUI in the manager and install it.
 
 
